@@ -20,7 +20,7 @@ ENV FLUTTER_ROOT=${FLUTTER_HOME}
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
-RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-dev.tar.xz && tar -xf flutter_linux_${FLUTTER_VERSION}-dev.tar.xz -C ${FLUTTER_HOME}/
+RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz && tar -xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz -C ${FLUTTER_HOME}/
 
 RUN yes | flutter doctor --android-licenses && flutter doctor
 
