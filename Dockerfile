@@ -32,8 +32,7 @@ RUN mkdir /projects && \
     for f in "${HOME}" "/etc/passwd" "/projects"; do \
       echo "Changing permissions on ${f}" && chgrp -R 0 ${f} && \
       chmod -R g+rwX ${f}; \
-    done && \
-    
+    done
     
 ADD etc/entrypoint.sh /entrypoint.sh
 
