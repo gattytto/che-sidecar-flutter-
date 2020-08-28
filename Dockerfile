@@ -18,9 +18,13 @@ ENV HOME=/home/theia
 ENV FLUTTER_HOME=${HOME}/sdks/flutter 
 ENV FLUTTER_ROOT=${FLUTTER_HOME}
 
-ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
-RUN mkdir -p ${FLUTTER_HOME} && wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz && tar -xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz -C ${FLUTTER_HOME}/
+
+RUN mkdir -p ${FLUTTER_HOME} 
+RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz 
+RUN tar -xf flutter_linux_${FLUTTER_VERSION}-stable.tar.xz -C ${FLUTTER_HOME}/
+
+ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
 RUN yes | flutter doctor --android-licenses && flutter doctor
 
