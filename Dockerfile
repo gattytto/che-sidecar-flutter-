@@ -10,7 +10,7 @@
 #   Lining Pan
 
 FROM cirrusci/android-sdk:29
-
+USER root
 ENV FLUTTER_VERSION=1.20.2
 
 ENV HOME=/home/theia
