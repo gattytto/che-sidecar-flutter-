@@ -9,7 +9,7 @@
 #   Red Hat, Inc. - initial API and implementation
 #   Lining Pan
 
-FROM cirrusci/android-sdk:29
+FROM cirrusci/android-sdk:30
 USER root
 
 ENV FLUTTER_VERSION=1.20.2
@@ -27,6 +27,8 @@ RUN rm -f flutter_linux_${FLUTTER_VERSION}-stable.tar.xz
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
 RUN yes | flutter doctor --android-licenses && flutter doctor
+
+RUN sdkmanager --update
 
 RUN mkdir /projects && \
     # Change permissions to let any arbitrary user
