@@ -23,7 +23,7 @@ ENV FLUTTER_ROOT=${FLUTTER_HOME}
 
 RUN mkdir -p ${FLUTTER_HOME} 
 RUN wget https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_BRANCH}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz 
-RUN tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}}.tar.xz -C ${HOME}/sdks/
+RUN tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/
 RUN rm -f flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
