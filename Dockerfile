@@ -30,7 +30,7 @@ RUN yes | flutter doctor --android-licenses && flutter doctor
 
 RUN mkdir /projects && \
     # Change permissions to let any arbitrary user
-    for f in "${HOME}" "/etc/passwd" "/projects"; do \
+    for f in "${HOME}" "/etc/passwd" "/projects" "/opt"; do \
       echo "Changing permissions on ${f}" && chgrp -R 0 ${f} && \
       chmod -R g+rwX ${f}; \
     done
