@@ -28,11 +28,10 @@ RUN rm -f flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
-RUN yes | flutter doctor --android-licenses && flutter doctor
-
 RUN sdkmanager --update
 RUN flutter upgrade
 RUN flutter config global --enable-web
+RUN yes | flutter doctor --android-licenses && flutter doctor
 
 RUN mkdir /projects && \
     # Change permissions to let any arbitrary user
