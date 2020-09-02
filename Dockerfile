@@ -22,11 +22,12 @@ ENV FLUTTER_HOME=${HOME}/sdks/flutter
 ENV FLUTTER_ROOT=${FLUTTER_HOME}
 
 RUN mkdir -p ${FLUTTER_HOME} 
-RUN cat << EOF > ${HOME}/.flutter_settings
-    {
-      "enable-web": true
-    }
-    EOF
+RUN echo '{\n\
+"enable-web": true\n\
+ }\n'\
+>> ${HOME}/.flutter_settings
+
+RUN cat ${HOME}/.flutter_settings
 
 RUN wget https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_BRANCH}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz 
 RUN tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/
