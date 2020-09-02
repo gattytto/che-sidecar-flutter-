@@ -23,9 +23,9 @@ ENV FLUTTER_ROOT=${FLUTTER_HOME}
 
 RUN mkdir -p ${FLUTTER_HOME} 
 RUN echo '{\n\
-"enable-web": true\n\
- }\n'\
->> ${HOME}/.flutter_settings
+    "enable-web": true\n\
+    }\n'\
+    >> ${HOME}/.flutter_settings
 
 RUN cat ${HOME}/.flutter_settings
 
