@@ -35,11 +35,13 @@ RUN rm -f flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 ENV PATH ${PATH}:${HOME}/sdks/flutter/.pub-cache/bin
+ENV PATH ${PATH}:${HOME}/.pub-cache/bin
 
 RUN sdkmanager --update
 RUN flutter upgrade
 RUN flutter config global --enable-web
 RUN pub global activate webdev
+RUN pub global activate grinder
 RUN yes | flutter doctor --android-licenses && flutter doctor
 
 RUN mkdir /projects && \
