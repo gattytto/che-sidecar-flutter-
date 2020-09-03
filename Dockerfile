@@ -39,6 +39,7 @@ ENV PATH ${PATH}:${HOME}/sdks/flutter/.pub-cache/bin
 RUN sdkmanager --update
 RUN flutter upgrade
 RUN flutter config global --enable-web
+RUN pub global activate webdev
 RUN yes | flutter doctor --android-licenses && flutter doctor
 
 RUN mkdir /projects && \
