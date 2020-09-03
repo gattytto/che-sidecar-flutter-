@@ -34,6 +34,7 @@ RUN tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}
 RUN rm -f flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
+ENV PATH ${PATH}:${HOME}/sdks/flutter/.pub-cache/bin
 
 RUN sdkmanager --update
 RUN flutter upgrade
