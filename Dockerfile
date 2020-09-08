@@ -30,7 +30,7 @@ RUN echo '{\n\
 RUN cat ${HOME}/.flutter_settings
 
 #RUN wget https://storage.googleapis.com/flutter_infra/releases/${FLUTTER_BRANCH}/linux/flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz 
-RUN git clone https://github.com/flutter/flutter.git ${HOME}/sdks/flutter
+RUN git clone -b master https://github.com/flutter/flutter.git ${HOME}/sdks/flutter
 #RUN tar -xf flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz -C ${HOME}/sdks/
 #RUN rm -f flutter_linux_${FLUTTER_VERSION}-${FLUTTER_BRANCH}.tar.xz
 
