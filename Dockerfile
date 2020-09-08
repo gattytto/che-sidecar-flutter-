@@ -42,7 +42,7 @@ RUN flutter upgrade
 RUN flutter config global --enable-web
 RUN pub global activate webdev
 RUN pub global activate grinder
-RUN yes | flutter doctor --android-licenses && flutter doctor
+RUN yes | flutter doctor --android-licenses && flutter doctor && flutter precache
 
 RUN mkdir /projects && \
     # Change permissions to let any arbitrary user
